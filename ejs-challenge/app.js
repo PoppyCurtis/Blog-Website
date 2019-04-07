@@ -40,7 +40,13 @@ app.post("/compose", function (req, res) {
 });
 
 app.get("/posts/:postName", function (req, res) {
-  console.log(req.params.postName);
+  const URLTitle = req.params.postName
+  posts.forEach(function(post) {
+    let storedTitle = post.title;
+    if (URLTitle === storedTitle) {
+      console.log("Match found!");
+    }
+    });
 });
 
 

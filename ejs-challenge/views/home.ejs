@@ -11,8 +11,8 @@
     <h1>Home</h1>
     <p><%= homeText%></p>
     <% posts.forEach(function(post) {%>
-      <h1><%=post.title%></h1>
-      <p><%=post.content%></p>
+      <h1 name="title"><%=post.title%></h1>
+      <p name="content"><%=post.content%></p>
     <%})%>
 </body>
 </html>
