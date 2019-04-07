@@ -45,12 +45,12 @@ app.get("/posts/:postName", function (req, res) {
   posts.forEach(function(post) {
     let storedTitle = _.lowerCase(post.title);
     if (URLTitle === storedTitle) {
-      console.log("Match found!");
+      res.render(__dirname + "/views/post.ejs", {
+        title: post.title,
+        content: post.content
+      })
     }
-    else {
-      console.log("Not a match!");
-    }
-    });
+  });
 });
 
 
